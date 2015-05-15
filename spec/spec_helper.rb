@@ -3,4 +3,5 @@ require "stringio"
 require "time"
 require "timecop"
 
+ENV["TZ"] = "UTC"
 include Term::ANSIColor

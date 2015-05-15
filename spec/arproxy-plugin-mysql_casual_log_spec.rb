@@ -27,7 +27,7 @@ describe Arproxy::Plugin::MysqlCasualLog do
   end
 
   describe "#execute" do
-    subject { out.string.sub(/Query options:.*/, "Query options:") }
+    subject { out.string.sub(/Query options:.*/, "Query options:").sub(/rows: \d+/, "rows:") }
 
     before do
       Timecop.freeze(today) do
@@ -52,7 +52,7 @@ possible_keys: #{red bold "NULL"}
           key: #{red bold "NULL"}
       key_len:\s
           ref:\s
-         rows: 9
+         rows:
         Extra:\s
         EOS
       end
