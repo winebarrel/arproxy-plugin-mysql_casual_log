@@ -5,6 +5,9 @@ It is porting of [MySQLCasualLog.pm](https://gist.github.com/kamipo/839e8a5b6d12
 
 see http://kamipo.github.io/talks/20140711-mysqlcasual6
 
+[![Gem Version](https://badge.fury.io/rb/arproxy-plugin-mysql_casual_log.svg)](http://badge.fury.io/rb/arproxy-plugin-mysql_casual_log)
+[![Build Status](https://travis-ci.org/winebarrel/arproxy-plugin-mysql_casual_log.svg?branch=master)](https://travis-ci.org/winebarrel/arproxy-plugin-mysql_casual_log)
+
 ## Installation
 
 Add this line to your application's Gemfile:
