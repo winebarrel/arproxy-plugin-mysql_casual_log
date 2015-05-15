@@ -33,3 +33,5 @@ Arproxy.configure do |config|
 end
 Arproxy.enable!
 ```
+
+![](http://i.gyazo.com/8d0916a26daea1f33260f4db0721e599.png)
