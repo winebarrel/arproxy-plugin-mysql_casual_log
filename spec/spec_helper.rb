@@ -1,2 +1,2 @@
 require "arproxy"
-require "arproxy/plugin/casual_log"
+require "arproxy/plugin/mysql_casual_log"

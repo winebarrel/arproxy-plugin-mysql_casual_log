@@ -1,12 +1,12 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
-  spec.name          = "arproxy-plugin-casual_log"
-  spec.version       = "0.0.1"
+  spec.name          = "arproxy-plugin-mysql_casual_log"
+  spec.version       = "0.1.0"
   spec.authors       = ["Genki Sugawara"]
   spec.email         = ["sugawara@cookpad.com"]
-  spec.summary       = %q{Plug-in that colorize the bad query for Arproxy.}
-  spec.description   = %q{Plug-in that colorize the bad query for Arproxy.}
-  spec.homepage      = "https://github.com/winebarrel/arproxy-plugin-casual_log"
+  spec.summary       = %q{Plug-in that colorize MySQL bad query for Arproxy.}
+  spec.description   = %q{Plug-in that colorize MySQL bad query for Arproxy.}
+  spec.homepage      = "https://github.com/winebarrel/arproxy-plugin-mysql_casual_log"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

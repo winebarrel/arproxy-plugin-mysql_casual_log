@@ -3,8 +3,8 @@ require "mysql2"
 require "term/ansicolor"
 
 module Arproxy::Plugin
-  class CasualLog < Arproxy::Base
-    Arproxy::Plugin.register(:casual_log, self)
+  class MysqlCasualLog < Arproxy::Base
+    Arproxy::Plugin.register(:mysql_casual_log, self)
 
     REGEXPS = {
       'select_type' => Regexp.union(
@@ -74,7 +74,7 @@ module Arproxy::Plugin
 # Time: #{Time.now.strftime("%Y-%m-%d %H:%M:%S")}
 # Query options: #{query_options.inspect}
 # Query: #{sql}
-#{explains.join}
+#{explains.join("\n")}
         EOS
       end
     rescue => e
