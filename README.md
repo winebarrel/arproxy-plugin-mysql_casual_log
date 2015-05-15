@@ -29,6 +29,6 @@ Or install it yourself as:
 ```ruby
 Arproxy.configure do |config|
    config.adapter = "mysql2"
-  config.plugin :mysql_casual_log
+   config.plugin :mysql_casual_log
 end
 ```
