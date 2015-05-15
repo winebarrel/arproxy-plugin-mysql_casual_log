@@ -3,7 +3,7 @@ describe Arproxy::Plugin::MysqlCasualLog do
     allow_any_instance_of(Arproxy::Base).to receive(:execute)
   end
 
-  let(:today) { Time.parse("2015-05-15 20:15:55 +0900") }
+  let(:today) { Time.parse("2015-05-15 20:15:55 +0000") }
   let(:out) { StringIO.new }
 
   let(:raw_connection) do
