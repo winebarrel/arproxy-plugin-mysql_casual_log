@@ -1,4 +1,6 @@
 require "arproxy"
+require "mysql2"
+require "term/ansicolor"
 
 module Arproxy::Plugin
   class CasualLog < Arproxy::Base
@@ -30,7 +32,7 @@ module Arproxy::Plugin
     def initialize(*args)
       @options = args.first || {}
       @out = @options[:out] || $stdout
-      @raw_connection = @options[:raw_connection] || proc {|c| c.raw_connection }
+      @raw_connection = @options[:raw_connection] || proc {|conn, sql| conn.raw_connection }
     end
 
     def execute(sql, name=nil)
@@ -45,7 +47,7 @@ module Arproxy::Plugin
 
     def proxy(sql)
       if @raw_connection.respond_to?(:call)
-        conn = @raw_connection.call(proxy_chain.connection)
+        conn = @raw_connection.call(proxy_chain.connection, sql)
       else
         conn = @raw_connection
       end
@@ -65,13 +67,18 @@ module Arproxy::Plugin
       end
 
       if badquery
+        query_options = conn.query_options.dup
+        query_options.delete(:password)
+
         @out << <<-EOS
 # Time: #{Time.now.strftime("%Y-%m-%d %H:%M:%S")}
-# Query options: #{conn.query_options.inspect}
+# Query options: #{query_options.inspect}
 # Query: #{sql}
 #{explains.join + "\n"}
         EOS
       end
+    rescue => e
+      $stderr.puts colored([e.message, e.backtrace.first].join("\n"))
     end
 
     def colorize_explain(explain_result)

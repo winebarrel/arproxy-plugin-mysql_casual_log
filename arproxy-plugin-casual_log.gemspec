@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "arproxy", "~> 0.2.0"
+  spec.add_dependency "mysql2"
   spec.add_dependency "term-ansicolor"
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
