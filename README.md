@@ -1,4 +1,4 @@
-# Arproxy::Plugin::CasualLog
+# Arproxy::Plugin::MysqlCasualLog
 
 Plug-in that colorize MySQL bad query for [Arproxy](https://github.com/cookpad/arproxy).
 It is porting of [MySQLCasualLog.pm](https://gist.github.com/kamipo/839e8a5b6d12bddba539).

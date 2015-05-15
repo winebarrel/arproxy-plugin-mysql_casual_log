@@ -109,7 +109,7 @@ module Arproxy::Plugin
         message << "%*s: %s\n" % [max_key_length, key, value]
       end
 
-      message.strip
+      message.chomp
     end
   end # CasualLog
 end # Arproxy::Plugin
