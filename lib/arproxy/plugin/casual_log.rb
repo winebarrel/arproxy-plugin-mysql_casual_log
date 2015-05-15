@@ -74,7 +74,7 @@ module Arproxy::Plugin
 # Time: #{Time.now.strftime("%Y-%m-%d %H:%M:%S")}
 # Query options: #{query_options.inspect}
 # Query: #{sql}
-#{explains.join + "\n"}
+#{explains.join}
         EOS
       end
     rescue => e
@@ -109,7 +109,7 @@ module Arproxy::Plugin
         message << "%*s: %s\n" % [max_key_length, key, value]
       end
 
-      message
+      message.strip
     end
   end # CasualLog
 end # Arproxy::Plugin
