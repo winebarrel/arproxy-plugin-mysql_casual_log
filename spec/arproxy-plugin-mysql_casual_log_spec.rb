@@ -60,7 +60,7 @@ possible_keys: #{red bold "NULL"}
       it { is_expected.to eq explain }
     end
 
-    context "when bad query" do
+    context "when good query" do
       let(:sql) { "select 1 from user where Host = 'localhost'" }
       it { is_expected.to eq "" }
     end
