@@ -31,4 +31,5 @@ Arproxy.configure do |config|
    config.adapter = "mysql2"
    config.plugin :mysql_casual_log
 end
+Arproxy.enable!
 ```
